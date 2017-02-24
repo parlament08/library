@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the carousele-books feature.
+ */
+
+include_once 'carousele_books.features.inc';

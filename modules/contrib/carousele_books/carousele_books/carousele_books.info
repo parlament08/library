@@ -1,0 +1,11 @@
+name = carousele-books
+core = 7.x
+package = Features
+version = 7.x-1.0
+project = carousele_books
+dependencies[] = jcarousel
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = jcarousel
+features_exclude[dependencies][ctools] = ctools

@@ -1,0 +1,35 @@
+<?php
+
+/**
+* Implements hook_menu().
+*/
+
+function module_form_menu(){
+    $item = array();
+    $item['contacts'] = array(
+        'title' => 'Форма обратной связи',
+        'page callback' => 'module_form_callback',
+        'type' => MENU_NORMAL_ITEM,
+        'access callback' => TRUE
+    );
+    return $item;
+}
+
+function module_form_callback(){
+    $form = array();
+    $form['name'] = array(
+        '#type' => 'textfield',
+        '#title' => 'Ваше имя',
+        '#attributes' => array(
+            '#playsholder' => array('Фамилия/Имя')
+        )
+    );
+    $form['phone'] = array(
+        '#type' => 'phone',
+        '#title' => 'Ваш Телефон',
+        '#attributes' => array(
+            '#playsholder' => array('Телефон')
+        )
+    );
+
+}
