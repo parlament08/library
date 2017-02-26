@@ -1,0 +1,5 @@
+name = Форма обратной связи
+description = "Модуль для формы обратной связи"
+core = 7.x
+version = 1.0
+package = My Modules
