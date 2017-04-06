@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * implements hook_permission()
+ */
+function custom_modules_permission() {
+    return array(
+        'submit custom_modules' => array(
+            'title' => t('Submit custom_modules'),
+            'description' => t('Submit the custom_modules form'),
+        ),
+    );
+}
+
+/*
+ * Implements hook_menu
+ */
+
+function custom_modules_menu()
+{
+    $items = array();
+    $items['contacts/form'] = array(
+        'title' => t('Форма обратной связи'),
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('first_form'),
+        'access callback' => TRUE,
+        'type' => MENU_NORMAL_ITEM
+    );
+    return $items;
+}
+
+function first_form($form, &$form_state)
+{
+    $form['name'] = array(
+        '#title' => t('Ваше имя'),
+        '#type' => 'textfield',
+        '#required' => TRUE,
+        '#description' => t('Пожалуйста, введите Ваше имя'),
+    );
+    $form['email'] = array(
+        '#title' => t('Электронная почта'),
+        '#type' => 'textfield',
+        '#description' => t('Пожалуйста, ведите Вашу почту'),
+    );
+    $form['text'] = array(
+        '#title' => t('Ваше сообщение'),
+        '#type' => 'textarea',
+        '#description' => t('Пожалуйста, введите Ваш текст'),
+    );
+
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => t('send'),
+    );
+
+    return $form;
+
+}
+
+function custom_modules_form_validate($form, &$form_state){
+
+}

@@ -1,0 +1,43 @@
+<?php
+
+/**
+* implements hook_schema()
+*/
+
+function custom_modules_schema(){
+    $schema = array();
+    $schema['form_custom'] = array(
+        'description' => 'The table for storing the subscriber data.',
+        'fields' => array(
+            'id' => array(
+                'description' => 'The primary identifier for subscriber.',
+                'type' => 'serial',
+                'not null' => TRUE,
+                'unsigned' => TRUE,
+            ),
+            'name' => array(
+                'description' => 'Subscriber name.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'email' => array(
+                'description' => 'Subscriber email.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+            'message' => array(
+                'description' => 'Subscriber message.',
+                'type' => 'varchar',
+                'length' => 255,
+                'not null' => TRUE,
+                'default' => '',
+            ),
+        ),
+        'primary key' => array('id'),
+    );
+    return $schema;
+}

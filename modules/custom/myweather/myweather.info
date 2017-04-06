@@ -1,0 +1,10 @@
+name = MyWeather
+description = This module provides a custom block with dynamic content.
+package = My Modules
+core = 7.x
+
+files[] = myweather.admin.inc
+files[] = statistics.pages.inc
+
+scripts[] = js/libs/underscore.js
+scripts[] = js/myweather.js
